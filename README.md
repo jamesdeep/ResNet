@@ -23,7 +23,7 @@ single center crop (224x224) validation error rate(%)
 | ResNet-50     | 24.36       | 7.46        | realease later |
 
 ### Training Log
-All the training detail you can found [here](./log), which include lr schedular, batch-size etc, and you can also see the training speed with the corresponding logs. 
+All the training detail you can found [here](./resnet50.trainlog), which include lr schedular, batch-size etc, and you can also see the training speed with the corresponding logs. 
 
 ### Notes
 1. Data augmentation has critical impacts on the accuracy. The data augmentation is the same with the original ResNet paper except color augmentation. I reference the color augmentation from a [official reproduce of Tensorflow](https://github.com/tensorflow/benchmarks/blob/master/scripts/tf_cnn_benchmarks/preprocessing.py). This is why our accuracy is higher than the original paper. Also I note that [another reproduce](https://github.com/facebook/fb.resnet.torch) use different scale and ratio augmentation which aslo achieves better accuracy than the original one. Also be aware that too much data augmentation may have negative impacts on the accuracy. I use python-opencv2 module to handle the data augmentation. Notice that set the threads to 1 after import cv2 by using 
